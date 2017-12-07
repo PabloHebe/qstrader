@@ -1,5 +1,5 @@
 from __future__ import division
-from multipledispatch import dispatch
+from multipledispatch import dispatch  # multiple dispatch, for interaction between two objects
 from .compat import PY2
 import numpy as np
 

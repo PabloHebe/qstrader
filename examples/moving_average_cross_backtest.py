@@ -1,4 +1,4 @@
-from collections import deque
+from collections import deque  # collections imports alternative high performance container types. deque similar to list
 import datetime
 
 import numpy as np
@@ -6,7 +6,7 @@ import numpy as np
 from qstrader import settings
 from qstrader.strategy.base import AbstractStrategy
 from qstrader.event import SignalEvent, EventType
-from qstrader.compat import queue
+from qstrader.compat import queue  # solely to handle different python versions 2. and 3.
 from qstrader.trading_session import TradingSession
 
 
@@ -23,7 +23,7 @@ class MovingAverageCrossStrategy(AbstractStrategy):
         events_queue,
         short_window=100,
         long_window=300,
-        base_quantity=100
+        base_quantity=100  # how many stocks to buy
     ):
         self.ticker = ticker
         self.events_queue = events_queue
@@ -81,7 +81,7 @@ def run(config, testing, tickers, filename):
     # Use the MAC Strategy
     events_queue = queue.Queue()
     strategy = MovingAverageCrossStrategy(
-        tickers[0], events_queue,
+        tickers[0], events_queue,  # only first entrance of tickers used for strategy
         short_window=100,
         long_window=300
     )
@@ -91,7 +91,7 @@ def run(config, testing, tickers, filename):
         config, strategy, tickers,
         initial_equity, start_date, end_date,
         events_queue, title=title,
-        benchmark=tickers[1],
+        benchmark=tickers[1],  # benchmark is applied
     )
     results = backtest.start_trading(testing=testing)
     return results
