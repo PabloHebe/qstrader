@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/mhallsmoore/qstrader.svg?branch=master)](https://travis-ci.org/mhallsmoore/qstrader)
 [![Coverage Status](https://coveralls.io/repos/github/mhallsmoore/qstrader/badge.svg?branch=master)](https://coveralls.io/github/mhallsmoore/qstrader?branch=master)
 
-# Development News (6th November 2017)
+# Development News (6th November 2017 Test)
 
 We are pleased to announce that the QuantStart software development team are currently in the process of a complete redevelopment of QSTrader.
 
