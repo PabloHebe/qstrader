@@ -1,6 +1,6 @@
 from abc import ABCMeta, abstractmethod
 
-from ..compat import pickle  # for saving and loading dictionaries from files I guess
+from ..compat import pickle
 
 
 class AbstractStatistics(object):

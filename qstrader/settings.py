@@ -2,21 +2,18 @@ import os
 import time
 import warnings
 import yaml
-from munch import munchify, unmunchify  # Munch is a dictionary that supports attribute-style access, a la JavaScript.
-'''
-munchify - Recursively transforms a dictionary into a Munch via copy.
-unmunchify - Recursively converts a Munch into a dictionary.
-'''
+from munch import munchify, unmunchify
+
 
 ENV_VAR_ROOT = 'QSTRADER'
-DEFAULT_CONFIG_FILENAME = r'C:\Users\pablo\Documents\GitHub\qstrader.yml'  # file that incorporates
+DEFAULT_CONFIG_FILENAME = '~/qstrader.yml'
 
 
 def from_env(key, default_value=None, root=ENV_VAR_ROOT):
     """Returns a value (url, login, password)
     using either default_value or using environment variable"""
-    if root != "":  # if not text then...
-        ENV_VAR_KEY = root + "_" + key.upper()  # key.uppter() everything in capital letters
+    if root != "":
+        ENV_VAR_KEY = root + "_" + key.upper()
     else:
         ENV_VAR_KEY = key.upper()
     if default_value == '' or default_value is None:
@@ -30,8 +27,8 @@ def from_env(key, default_value=None, root=ENV_VAR_ROOT):
 
 
 DEFAULT = munchify({
-    "CSV_DATA_DIR": from_env("CSV_DATA_DIR", r"C:\Users\pablo\Documents\GitHub\qstrader\data"),  # VERÄNDERT
-    "OUTPUT_DIR": from_env("OUTPUT_DIR", r"C:\Users\pablo\Documents\GitHub\qstrader\out")  # VERÄNDERT
+    "CSV_DATA_DIR": from_env("CSV_DATA_DIR", "~/data"),
+    "OUTPUT_DIR": from_env("OUTPUT_DIR", "~/out")
 })
 
 

@@ -28,7 +28,7 @@ class Strategies(AbstractStrategy):
     """
     Strategies is a collection of strategy
     """
-    def __init__(self, *strategies):  # * unpacks the sequence/collection into positional arguments
+    def __init__(self, *strategies):
         self._lst_strategies = strategies
 
     def calculate_signals(self, event):

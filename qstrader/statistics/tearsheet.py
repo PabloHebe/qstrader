@@ -634,12 +634,12 @@ class TearsheetStatistics(AbstractStatistics):
         self._plot_txt_time(stats, ax=ax_txt_time)
 
         # Plot the figure
-        plt.show()  # if you input block=False to the inner part the figure does not stay
+        plt.show(block=False)
 
         if filename is not None:
             fig.savefig(filename, dpi=150, bbox_inches='tight')
 
-    def get_filename(self, filename=""):  # functions are not called yet, no plot safed. Filename "None" see above.
+    def get_filename(self, filename=""):
         if filename == "":
             now = datetime.utcnow()
             filename = "tearsheet_" + now.strftime("%Y-%m-%d_%H%M%S") + ".png"
