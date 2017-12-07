@@ -1,6 +1,6 @@
 from __future__ import print_function
 
-from enum import Enum
+from enum import Enum  # for defining event types
 
 
 EventType = Enum("EventType", "TICK BAR SIGNAL ORDER FILL SENTIMENT")
@@ -40,12 +40,18 @@ class TickEvent(Event):
         self.ask = ask
 
     def __str__(self):
+        """
+        defines the print function of such an object
+        """
         return "Type: %s, Ticker: %s, Time: %s, Bid: %s, Ask: %s" % (
             str(self.type), str(self.ticker),
             str(self.time), str(self.bid), str(self.ask)
         )
 
     def __repr__(self):
+        """
+        related to print function but direct output without print
+        """
         return str(self)
 
 
